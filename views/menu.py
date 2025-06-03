@@ -13,7 +13,9 @@ def menu_principal():
     print("1. Sistema de usuarios👤")
     print("2. Jugar🃏🎰🎲")
     print("3. Ver historial de un jugador📄")
-    print("4. Salir⛔")
+    print("4. Bot Consejero🤖🎲")
+    print("5. Reportes 📰")
+    print("6. Salir⛔")
         
 def menu_juegos():
     print("\n=== MENÚ DE JUEGOS ===")

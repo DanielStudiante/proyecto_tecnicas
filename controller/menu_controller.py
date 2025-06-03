@@ -2,6 +2,8 @@ from views.menu import menu_principal, menu_jugadores, menu_juegos
 from controller.jugador_controller import *
 from Juegos.Tragamonedas import menu_tragamonedas #llamado a la funcion de tragamonedas
 from Juegos.BlackJack import menu_blackjack
+from Juegos.BotConsejos import menu_optimizador
+from reportes.reportes import menu_reportes  # Importar el sistema de reportes
 # from Juegos.BlackJack import jugar_blackjack
 
 
@@ -24,6 +26,10 @@ def menu_principal_controller():
             else: 
                 print("Jugador no encontrado.")
         elif opcion == "4":
+            menu_optimizador()
+        elif opcion == "5" :
+            menu_reportes()
+        elif opcion == "6":
             print("¡ESPERAMOS VERTE DE NUEVO EN EL CASINO!")
             break
         else:
