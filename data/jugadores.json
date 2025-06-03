@@ -1,0 +1,32 @@
+[
+    {
+        "nombre": "Daniel Mu\u00f1oz Hernandez ",
+        "id": "ASD34",
+        "saldo_inicial": 800.0,
+        "saldo_actual": 900.0,
+        "historial": []
+    },
+    {
+        "nombre": "Karen dahiana Bustamante",
+        "id": "40070",
+        "saldo_inicial": 12005.0,
+        "saldo_actual": 12000.0,
+        "historial": [
+            "Gan\u00f3 $15 con ('\ud83d\udd14', '\ud83d\udd14', '\ud83d\udd14')"
+        ]
+    },
+    {
+        "nombre": "Juan Esteban Toro Ramirez",
+        "id": "49095",
+        "saldo_inicial": 11000.0,
+        "saldo_actual": 11000.0,
+        "historial": []
+    },
+    {
+        "nombre": "Jhon Steban ramirez",
+        "id": "90876",
+        "saldo_inicial": 10000.0,
+        "saldo_actual": 5000.0,
+        "historial": []
+    }
+]
