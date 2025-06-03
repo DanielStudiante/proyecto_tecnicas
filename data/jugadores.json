@@ -6,7 +6,10 @@
         "saldo_actual": 900.0,
         "historial": [
             "Perdi\u00f3 $100 con ('\ud83d\udd14', '\ud83c\udf52', '\ud83c\udf4b')",
-            "Gan\u00f3 $20 con ('\ud83c\udf52', '\ud83c\udf52', '\ud83c\udf52')"
+            "Gan\u00f3 $20 con ('\ud83c\udf52', '\ud83c\udf52', '\ud83c\udf52')",
+            "Apost\u00f3 $500.0 en Blackjack",
+            "Apost\u00f3 $500.0 | Empat\u00f3 (Mismo puntaje) | Saldo: $900.0",
+            "Saldo actualizado: $900.0"
         ]
     },
     {
@@ -27,18 +30,18 @@
         "nombre": "Juan Esteban Toro Ramirez",
         "id": "49095",
         "saldo_inicial": 10642.0,
-        "saldo_actual": 11000.0,
+        "saldo_actual": 13300.0,
         "historial": [
-            "Perdi\u00f3 $10 con ('\ud83d\udd14', '\ud83c\udf4b', 'BAR')",
-            "Perdi\u00f3 $10 con ('7\ufe0f\u20e3', '\ud83c\udf4b', '\ud83c\udf52')",
-            "Perdi\u00f3 $10 con ('7\ufe0f\u20e3', 'BAR', '\ud83c\udf52')",
-            "Gan\u00f3 $50 con ('BAR', 'BAR', 'BAR')",
-            "Perdi\u00f3 $10 con ('BAR', '7\ufe0f\u20e3', '\ud83d\udd14')",
-            "Perdi\u00f3 $10 con ('\ud83d\udd14', '\ud83d\udd14', '\ud83c\udf52')",
             "Perdi\u00f3 $10 con ('\ud83c\udf4b', '7\ufe0f\u20e3', 'BAR')",
             "Perdi\u00f3 $10 con ('\ud83d\udd14', '7\ufe0f\u20e3', '\ud83c\udf52')",
             "Perdi\u00f3 $10 con ('\ud83c\udf4b', '\ud83c\udf4b', '\ud83c\udf4b')",
-            "Perdi\u00f3 $10 con ('\ud83c\udf4b', 'BAR', '\ud83c\udf52')"
+            "Perdi\u00f3 $10 con ('\ud83c\udf4b', 'BAR', '\ud83c\udf52')",
+            "Apost\u00f3 $500.0 en Blackjack",
+            "Perdi\u00f3 $500.0 (Dealer mayor puntaje)",
+            "Saldo actualizado: $10500.0",
+            "Perdi\u00f3 $100 con ('BAR', '\ud83c\udf52', '7\ufe0f\u20e3')",
+            "Gan\u00f3 $2000 con ('\ud83c\udf52', '\ud83c\udf4b', '\ud83d\udd14')",
+            "Gan\u00f3 $2000 con ('\ud83c\udf52', 'BAR', '\ud83c\udf4b')"
         ]
     },
     {

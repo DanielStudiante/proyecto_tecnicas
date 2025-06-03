@@ -1,6 +1,6 @@
 from views.menu import menu_principal, menu_jugadores, menu_juegos
 from controller.jugador_controller import *
-from Juegos.Tragamonedas import jugar_tragamonedas_con_usuario #llamado a la funcion de tragamonedas
+from Juegos.Tragamonedas import menu_tragamonedas #llamado a la funcion de tragamonedas
 from Juegos.BlackJack import menu_blackjack
 # from Juegos.BlackJack import jugar_blackjack
 
@@ -71,7 +71,7 @@ def menu_juegos_controller():
             menu_blackjack()
             # jugar blackjack()
         elif opcion == "2":
-            jugar_tragamonedas_con_usuario()
+            menu_tragamonedas()
             # jugar tragamonedas
         elif opcion == "3":
             break
