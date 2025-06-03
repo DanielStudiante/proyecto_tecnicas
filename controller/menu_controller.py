@@ -1,9 +1,37 @@
-from views.menu import viewMenu
+from views.menu import menu_principal, menu_jugadores, menu_juegos
 from controller.jugador_controller import *
+from Juegos.Tragamonedas import jugar_tragamonedas_con_usuario #llamado a la funcion de tragamonedas
+from Juegos.BlackJack import menu_blackjack
+# from Juegos.BlackJack import jugar_blackjack
+
+
+def menu_principal_controller():
+    while True:
+        menu_principal()
+        opcion = input("Seleccione una opción: ")
+
+        if opcion == "1":
+            controllerMenu()
+        elif opcion == "2":
+            menu_juegos_controller()
+        elif opcion == "3":
+            id = input("ID del jugador: ").upper()
+            jugador = buscar_jugador(id)
+            if jugador:
+                print("Historial de actividades:")
+                for actividad in jugador.historial:
+                    print("-", actividad)
+            else: 
+                print("Jugador no encontrado.")
+        elif opcion == "4":
+            print("¡ESPERAMOS VERTE DE NUEVO EN EL CASINO!")
+            break
+        else:
+            print("Opción inválida.")
+
 def controllerMenu():
     while True:
-        viewMenu()#esta funcion llama al view para mostrar el menu 
-
+        menu_jugadores()
         opcion = input("Seleccione una opción: ")
 
         if opcion == "1":
@@ -32,5 +60,20 @@ def controllerMenu():
             eliminar_jugador(id)
         elif opcion == "6":
             break 
+        else:
+            print("Opción inválida.")
+
+def menu_juegos_controller():
+    while True:
+        menu_juegos()
+        opcion = input("Seleccione un juego: ")
+        if opcion == "1":
+            menu_blackjack()
+            # jugar blackjack()
+        elif opcion == "2":
+            jugar_tragamonedas_con_usuario()
+            # jugar tragamonedas
+        elif opcion == "3":
+            break
         else:
             print("Opción inválida.")

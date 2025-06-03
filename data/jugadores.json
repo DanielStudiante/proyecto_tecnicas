@@ -2,31 +2,61 @@
     {
         "nombre": "Daniel Mu\u00f1oz Hernandez ",
         "id": "ASD34",
-        "saldo_inicial": 800.0,
+        "saldo_inicial": 1000.0,
         "saldo_actual": 900.0,
-        "historial": []
+        "historial": [
+            "Perdi\u00f3 $100 con ('\ud83d\udd14', '\ud83c\udf52', '\ud83c\udf4b')",
+            "Gan\u00f3 $20 con ('\ud83c\udf52', '\ud83c\udf52', '\ud83c\udf52')"
+        ]
     },
     {
         "nombre": "Karen dahiana Bustamante",
         "id": "40070",
-        "saldo_inicial": 12005.0,
-        "saldo_actual": 12000.0,
+        "saldo_inicial": 12000.0,
+        "saldo_actual": 13000.0,
         "historial": [
-            "Gan\u00f3 $15 con ('\ud83d\udd14', '\ud83d\udd14', '\ud83d\udd14')"
+            "Gan\u00f3 $15 con ('\ud83d\udd14', '\ud83d\udd14', '\ud83d\udd14')",
+            "Perdi\u00f3 $10 con ('\ud83d\udd14', '\ud83c\udf52', '7\ufe0f\u20e3')",
+            "Perdi\u00f3 $10 con ('BAR', '\ud83c\udf4b', '\ud83c\udf4b')",
+            "Perdi\u00f3 $10 con ('7\ufe0f\u20e3', '\ud83d\udd14', '\ud83d\udd14')",
+            "Perdi\u00f3 $10 con ('BAR', '\ud83c\udf4b', 'BAR')",
+            "Gan\u00f3 $3 con ('7\ufe0f\u20e3', '7\ufe0f\u20e3', 'BAR')"
         ]
     },
     {
         "nombre": "Juan Esteban Toro Ramirez",
         "id": "49095",
-        "saldo_inicial": 11000.0,
+        "saldo_inicial": 10642.0,
         "saldo_actual": 11000.0,
-        "historial": []
+        "historial": [
+            "Perdi\u00f3 $10 con ('\ud83d\udd14', '\ud83c\udf4b', 'BAR')",
+            "Perdi\u00f3 $10 con ('7\ufe0f\u20e3', '\ud83c\udf4b', '\ud83c\udf52')",
+            "Perdi\u00f3 $10 con ('7\ufe0f\u20e3', 'BAR', '\ud83c\udf52')",
+            "Gan\u00f3 $50 con ('BAR', 'BAR', 'BAR')",
+            "Perdi\u00f3 $10 con ('BAR', '7\ufe0f\u20e3', '\ud83d\udd14')",
+            "Perdi\u00f3 $10 con ('\ud83d\udd14', '\ud83d\udd14', '\ud83c\udf52')",
+            "Perdi\u00f3 $10 con ('\ud83c\udf4b', '7\ufe0f\u20e3', 'BAR')",
+            "Perdi\u00f3 $10 con ('\ud83d\udd14', '7\ufe0f\u20e3', '\ud83c\udf52')",
+            "Perdi\u00f3 $10 con ('\ud83c\udf4b', '\ud83c\udf4b', '\ud83c\udf4b')",
+            "Perdi\u00f3 $10 con ('\ud83c\udf4b', 'BAR', '\ud83c\udf52')"
+        ]
     },
     {
         "nombre": "Jhon Steban ramirez",
         "id": "90876",
         "saldo_inicial": 10000.0,
-        "saldo_actual": 5000.0,
-        "historial": []
+        "saldo_actual": 2000.0,
+        "historial": [
+            "Saldo actualizado: $7000.0",
+            "Apost\u00f3 $5000.0 en Blackjack",
+            "Perdi\u00f3 $5000.0 (Dealer mayor puntaje)",
+            "Saldo actualizado: $2000.0",
+            "Apost\u00f3 $2000.0 en Blackjack",
+            "Apost\u00f3 $2000.0 | Gan\u00f3 $2000.0 (Dealer Bust) | Saldo: $4000.0",
+            "Saldo actualizado: $4000.0",
+            "Apost\u00f3 $2000.0 en Blackjack",
+            "Apost\u00f3 $2000.0 | Perdi\u00f3 $2000.0 (Bust) | Saldo: $2000.0",
+            "Saldo actualizado: $2000.0"
+        ]
     }
 ]

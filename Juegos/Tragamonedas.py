@@ -6,12 +6,23 @@ from controller.jugador_controller  import buscar_jugador, guardar_jugadores, ca
 
 simbolos = ["🍒", "🍋", "7️⃣", "BAR", "🔔"]
 tabla_ganadora = {
-    ("7️⃣", "7️⃣", "7️⃣"): 100,
-    ("BAR", "BAR", "BAR"): 50,
-    ("🍒", "🍒", "🍒"): 20,
-    ("🔔", "🔔", "🔔"): 15,
-    ("🍒", "🍒", "*"): 5,
-    ("🍒", "*", "*"): 2,
+    # Combinaciones exactas (tres símbolos iguales)
+    ("7️⃣", "7️⃣", "7️⃣"): 50000,     # Premio mayor
+    ("BAR", "BAR", "BAR"): 25000,     # Premio alto
+    ("🍒", "🍒", "🍒"): 20000,         # Premio medio
+    ("🔔", "🔔", "🔔"): 15000,         # Premio medio-bajo
+    ("🍋", "🍋", "🍋"): 10000,         # Premio bajo
+
+    # Combinaciones parciales con *=(cualquier elemento en esa posicion)
+    ("7️⃣", "*", "7️⃣"): 15000,        # Sietes en los extremos
+    ("BAR", "BAR", "*"): 10000,        # Dos BAR al inicio
+    ("🔔", "🔔", "*"): 7000,           # Dos campanas al inicio
+    ("🍒", "*", "🍒"): 6000,           # Cerezas en los extremos
+    ("🍒", "🍒", "*"): 5000,           # Dos cerezas al inicio
+    ("*", "🍒", "🍒"): 5000,           # Dos cerezas al final
+    ("*", "7️⃣", "*"): 3000,          # Un siete en el medio
+    ("*", "BAR", "*"): 2000,          # Un BAR en el medio
+    ("🍒", "*", "*"): 2000            # Una cereza al inicio
 }
 
 def evaluar(combo):
@@ -29,8 +40,8 @@ def jugar_tragamonedas_con_usuario():
         print("Jugador no encontrado.")
         return
 
-    saldo = jugador.saldo_inicial
-    costo_jugada = 10
+    saldo = jugador.saldo_actual
+    costo_jugada = 100
 
     print(f"\n🎰 Bienvenido {jugador.nombre}")
     print(f"💰 Saldo actual: ${saldo:.2f}")
@@ -66,7 +77,7 @@ def jugar_tragamonedas_con_usuario():
     if saldo < costo_jugada:
         print("💸 Te has quedado sin saldo.")
 
-    jugador.saldo_inicial = saldo
+    jugador.saldo_actual = saldo #  Actualizar el saldo 
     jugadores = cargar_jugadores()
     for i, j in enumerate(jugadores):
         if j.id == jugador.id:
@@ -74,5 +85,4 @@ def jugar_tragamonedas_con_usuario():
             break
     guardar_jugadores(jugadores)
 
-if __name__ == "__main__":
-    jugar_tragamonedas_con_usuario()
+    

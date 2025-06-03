@@ -2,7 +2,7 @@ import random
 import sys
 import os
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
-from controller.jugador_controller import buscar_jugador, modificar_jugador
+from controller.jugador_controller import buscar_jugador, cargar_jugadores , guardar_jugadores
 
 
 class CartaBlackjack:
@@ -200,6 +200,9 @@ class BlackjackSimplificado:
         print(f"👤 {self.jugador_actual.nombre}: {puntaje_jugador} puntos")
         print(f"🏠 Dealer: {puntaje_dealer} puntos")
         print("=" * 50)
+
+        # Registrar la apuesta
+        self.jugador_actual.agregar_historial(f"Apostó ${self.apuesta} en Blackjack")
         
         # Casos de victoria/derrota
         if resultado_jugador == "blackjack" and not self._es_blackjack(self.mano_dealer):
@@ -207,39 +210,67 @@ class BlackjackSimplificado:
             ganancia = int(self.apuesta * 1.5)
             nuevo_saldo = self.jugador_actual.saldo_actual + ganancia
             print(f"🎉 ¡BLACKJACK! ¡Ganaste ${ganancia}!")
+            self.jugador_actual.agregar_historial(
+                f"Apostó ${self.apuesta} | Ganó ${ganancia} (Blackjack) | Saldo: ${nuevo_saldo}")
             
         elif resultado_jugador == "bust":
             # Jugador se pasó
             nuevo_saldo = self.jugador_actual.saldo_actual - self.apuesta
             print(f"💸 Perdiste ${self.apuesta}. Te pasaste de 21.")
+            self.jugador_actual.agregar_historial(
+                f"Apostó ${self.apuesta} | Perdió ${self.apuesta} (Bust) | Saldo: ${nuevo_saldo}")
             
         elif resultado_dealer == "bust":
             # Dealer se pasó
             nuevo_saldo = self.jugador_actual.saldo_actual + self.apuesta
             print(f"🎉 ¡Ganaste ${self.apuesta}! El dealer se pasó.")
+            self.jugador_actual.agregar_historial(
+                f"Apostó ${self.apuesta} | Ganó ${self.apuesta} (Dealer Bust) | Saldo: ${nuevo_saldo}")
             
         elif self._es_blackjack(self.mano_jugador) and self._es_blackjack(self.mano_dealer):
             # Empate con Blackjack
             nuevo_saldo = self.jugador_actual.saldo_actual
             print("🤝 Empate - Ambos tienen Blackjack. Recuperas tu apuesta.")
+            self.jugador_actual.agregar_historial(
+                f"Apostó ${self.apuesta} | Empató con Blackjack | Saldo: ${nuevo_saldo}"
+            )
             
         elif puntaje_jugador > puntaje_dealer:
             # Jugador gana por puntos
             nuevo_saldo = self.jugador_actual.saldo_actual + self.apuesta
             print(f"🎉 ¡Ganaste ${self.apuesta}! Mayor puntaje.")
+            self.jugador_actual.agregar_historial(
+                f"Apostó ${self.apuesta} | Ganó ${self.apuesta} (Mayor puntaje) | Saldo: ${nuevo_saldo}"
+            )
             
         elif puntaje_jugador < puntaje_dealer:
             # Dealer gana por puntos
             nuevo_saldo = self.jugador_actual.saldo_actual - self.apuesta
             print(f"💸 Perdiste ${self.apuesta}. El dealer tiene mayor puntaje.")
+            self.jugador_actual.agregar_historial(f"Perdió ${self.apuesta} (Dealer mayor puntaje)")
             
         else:
             # Empate
             nuevo_saldo = self.jugador_actual.saldo_actual
             print("🤝 Empate - Mismo puntaje. Recuperas tu apuesta.")
+            self.jugador_actual.agregar_historial(
+                f"Apostó ${self.apuesta} | Empató (Mismo puntaje) | Saldo: ${nuevo_saldo}")
         
-        # Actualizar saldo del jugador
-        modificar_jugador(self.jugador_actual.id, nuevo_saldo=nuevo_saldo)
+        # Registrar saldo actualizado
+        self.jugador_actual.agregar_historial(f"Saldo actualizado: ${nuevo_saldo}")
+         
+        # Actualizar saldo del jugador (sin pasar historial)
+        self.jugador_actual.saldo_actual = nuevo_saldo
+
+        # Guardar todos los jugadores (incluyendo el historial actualizado)
+        jugadores = cargar_jugadores()
+        for i, j in enumerate(jugadores):
+            if j.id == self.jugador_actual.id:
+                jugadores[i] = self.jugador_actual
+                break
+        guardar_jugadores(jugadores)
+        
+        
         print(f"💳 Nuevo saldo: ${nuevo_saldo}")
         print("=" * 50)
     
@@ -340,6 +371,4 @@ def menu_blackjack():
         else:
             print("❌ Opción inválida. Por favor selecciona 1, 2 o 3.")
 
-
-if __name__ == "__main__":
-    menu_blackjack()
+   

@@ -12,7 +12,7 @@ class Jugador:
        # Agrega una actividad al historial del jugador (máx 10 elementos).
         self.historial.append(actividad)# ->Añadir en el historial la actividad 
         if len(self.historial) > 10:
-            self.historial.pop(0)
+            self.historial.pop(0) # Eliminar el ultimo registro 
 
     def to_dict(self):
         return {
